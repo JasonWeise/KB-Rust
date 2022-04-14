@@ -26,10 +26,11 @@ fn main() {
     println!();
 
     // 02 - Control Flow
-    example_02_control_flow(99);
+    example_02_if_elseif_else(99);
+    example_02_match(2);
 
     // 03 - Repetition - loop and while
-    example_03_loops();
+    example_03_loop();
     example_03_while();
 }
 
@@ -41,10 +42,14 @@ fn example_01_basic_add_numbers(x: i32, y: i32) -> i32 {
     x + y
 }
 
-// Control Flow - if, else, else if
-fn example_02_control_flow(a: i32) {
+// ********** 02 - Control Flow ************
+// example_02_if_elseif_else
+// *****************************************
+
+// 02 - Control Flow - if..else if..else
+fn example_02_if_elseif_else(a: i32) {
     print!("example_02_control_flow: ");
-    if a > 200 {
+    if a >= 200 {
         println!("Huge Number");
     }
     else if a > 99 {
@@ -54,8 +59,25 @@ fn example_02_control_flow(a: i32) {
     }
 }
 
+// 02 - Control Flow - match
+// NOTE: 'match' must allow for every possibility, use the '_' as a value for 'anything else'
+fn example_02_match(a: i32) {
+
+    match a {
+        1 => println!("We matched on the number 1"),
+        2 => println!("We matched on the number 2"),
+        100 => println!("We matched on the number 100"),
+        _ => println!("We didn't match anything important")
+    }
+}
+
+// ********** 03 - Repetition ************
+// example_03_loop
+// example_03_while
+// *****************************************
+
 // 03 - Repetition - loop
-fn example_03_loops() {
+fn example_03_loop() {
     let mut a = 0;
 
     // 'loop' in Rust will loop indefinitely until something causes it to 'break' out
